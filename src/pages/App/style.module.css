@@ -1,0 +1,38 @@
+/* Mobile */
+@media(max-width: 500px){
+  .App{
+    /* width: 100%; */
+    color: aliceblue;
+  }
+
+  .Toolbar{
+    width: 100%;
+  }
+
+  .Content{
+    margin-top: 92px;
+  }
+
+  .Content p{
+    text-align: center;
+  }
+  
+  .Toolbar {
+    display: none;
+  }
+} 
+
+/* Desktop */
+@media(min-width: 500px){
+  .Content{
+    margin-top: 92px;
+  }
+
+  .Content p{
+    text-align: center;
+  }
+
+  .Hamburger {
+    display: none;
+  }
+}

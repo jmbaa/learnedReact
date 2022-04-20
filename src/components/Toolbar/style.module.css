@@ -1,0 +1,24 @@
+.Toolbar {
+    position: fixed;
+    height: 56px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: brown;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 8px 20x; */
+    box-sizing: border-box;
+    z-index: 90;
+    color: white;
+    font-size: 20px;
+    padding: 0 0 5px 15px;
+}
+
+/* On mobile */
+@media(max-width: 500px){
+    .HideOnMobile {
+        display: none;
+    }
+}

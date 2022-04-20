@@ -1,0 +1,28 @@
+.Burger {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    overflow: scroll;
+}
+
+/*On Desktop*/
+@media (min-width: 800px) and (min-height: 400px) {
+    .Burger {
+        width: 700px;
+        height: 500px;
+    }
+}
+
+/*On mobile*/
+@media (max-width: 650px) {
+    .Burger {
+        width: 90%;
+        height: 500px;
+    }
+}
+
+p{
+    color: gray;
+    font-size: 24px;
+}
