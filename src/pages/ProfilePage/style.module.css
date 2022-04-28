@@ -1,0 +1,28 @@
+.ProfilePage {
+    font-size: 14px;
+}
+
+.ProfilePage .Group1{
+    float: left;
+    width: 50%;
+    align-items: end;
+    padding-right: 30px;
+}
+
+.ProfilePage .Group2{
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.ProfilePage:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.vl {
+    border-left: 6px solid green;
+    height: 1000px;
+  }

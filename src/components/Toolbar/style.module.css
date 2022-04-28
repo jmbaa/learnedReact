@@ -4,7 +4,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: brown;
+    background-color: #1e4e5f;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,7 +12,7 @@
     box-sizing: border-box;
     z-index: 90;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     padding: 0 0 5px 15px;
 }
 

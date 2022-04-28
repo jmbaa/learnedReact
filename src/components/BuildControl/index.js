@@ -8,8 +8,6 @@ const BurgerControl = (props) => {
 
     const burgerCtx = useContext(BurgerContext).toString();
 
-    console.log(burgerCtx)
-
     return (
         <div className={css.BurgerControl}>
 

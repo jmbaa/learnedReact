@@ -1,0 +1,47 @@
+
+
+.Survey {
+    width: 80%;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 20px 50px;
+    margin: 10px auto;
+    border-radius: 4px;
+}
+
+.Survey p{
+    color: black;
+}
+
+
+.Survey .GeneralInfo {
+    text-align: left;
+}
+
+.Survey .Description{
+    text-align: justify;
+}
+
+.Survey .Group1{
+    float: left;
+    width: 50%;
+}
+
+.Survey .Group1 p{
+    text-align: left;
+}
+
+.Survey .Group2{
+    float: left;
+    width: 50%;
+}
+
+.Survey .Group2 p{
+    text-align: right;
+}
+/* Clear floats after the columns */
+.Survey .Group:after {
+    content: "";
+    display: table;
+    clear: both;
+}

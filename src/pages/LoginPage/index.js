@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import * as actions from "../../redux/action/loginActions";
 import Spinner from "../../components/General/Spinner";
 import { Navigate } from "react-router-dom";
+import Alert from "../../components/General/Alert";
 
 const LoginPage = (props) => {
   const [err, setErr] = useState(null);
@@ -51,7 +52,7 @@ const LoginPage = (props) => {
 
       {props.loading && <Spinner />}
 
-      {err && <div style={{ color: "red" }}>Алдаа гарлаа : {err}</div>}
+      {err && <div style={{ color: "red" }}>{err}</div>}
 
       {props.error && (
         <div style={{ color: "red" }}>Алдаа гарлаа : {props.error}</div>
@@ -65,7 +66,7 @@ const LoginPage = (props) => {
 const mapStateToProps = (state) => {
   return {
     loading: state.authReducer.loading,
-    error: state.authReducer.errFireBase,
+    error: state.authReducer.errDataBase,
     userId: state.authReducer.userId,
   };
 };

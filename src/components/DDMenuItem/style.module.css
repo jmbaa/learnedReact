@@ -1,0 +1,86 @@
+/* Mobile */
+@media (max-width: 500px) {
+  .DDMenuItem {
+    margin: 0;
+    display: block;
+    height: 100%;
+    width: auto;
+    align-items: center;
+
+    position: relative;
+    display: inline-block;
+  }
+
+  .DDMenuItem a {
+    color: #8f5c2c;
+    text-decoration: none;
+    height: 100%;
+    display: block;
+    padding: 16px 10px;
+  }
+
+  .DDMenuItem a:hover,
+  .DDMenuItem a:active,
+  .DDMenuItem a.active {
+    color: #40a4c8;
+    max-height: 1000px;
+    opacity: 1;
+  }
+}
+
+/* Desktop */
+@media (min-width: 500px) {
+  .DDMenuItem {
+    margin: 0;
+    display: flex;
+    height: 100%;
+    width: auto;
+    align-items: center;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .DDMenuItem:hover .DropdownContent {
+    display: block;
+  }
+
+  /* .Icon {
+    color: red;
+    font-size: 18px;
+    vertical-align: ;
+  } */
+
+  .DropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #d4d4d4;
+    min-width: 150px;
+    right:0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .DropDown {
+    color: white;
+    padding: 0px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .DDMenuItem a {
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    padding: 16px 10px;
+    border-bottom: 4px solid transparent;
+    display: block;
+  }
+
+  .DDMenuItem a:hover,
+  .DDMenuItem a:active,
+  .DDMenuItem a.active {
+    background-color: #ffb156;
+    border-bottom: 4px solid #40a4c8;
+  }
+}

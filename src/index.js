@@ -10,6 +10,8 @@ import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import burgerReducer from "./redux/reducer/burgerReducer";
 import orderReducer from "./redux/reducer/orderReducer";
 import authReducer from "./redux/reducer/authReducer";
+import surveyReducer from "./redux/reducer/surveyReducer";
+import questionReducer from "./redux/reducer/questionReducer";
 
 const loggerMiddleware = (store) => {
   return (next) => {
@@ -31,6 +33,8 @@ const reducers = combineReducers({
   burgerReducer,
   orderReducer,
   authReducer,
+  surveyReducer,
+  questionReducer
 });
 
 const store = createStore(

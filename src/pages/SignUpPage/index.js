@@ -41,11 +41,13 @@ const SignUpPage = (props) => {
         type="text"
         placeholder="Цахим хаяг оруулах"
       ></input>
+
       <input
         onChange={getPass1}
         type="password"
         placeholder="Нууц үг оруулах"
       ></input>
+      
       <input
         onChange={getPass2}
         type="password"

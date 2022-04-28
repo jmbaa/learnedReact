@@ -4,7 +4,6 @@ import Burger from "../../components/Burger";
 import BurgerControls from "../../components/BuildControls";
 import Modal from "../../components/General/Modal";
 import OrderSummary from "../../components/OrderSummary";
-import BurgerContext from "../../contexts/BurgerContext";
 
 const BurgerPage = (props) => {
   const [confirmOrder, setConfirmOrder] = useState(false);
