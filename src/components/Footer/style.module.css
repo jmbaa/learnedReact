@@ -1,0 +1,16 @@
+.Footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #021639;
+    color: white;
+    text-align: center;
+}
+
+/* On mobile */
+/* @media(max-width: 500px){
+    .HideOnMobile {
+        display: none;
+    }
+} */

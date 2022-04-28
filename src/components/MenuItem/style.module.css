@@ -32,6 +32,7 @@
         height: 100%;
         width: auto;
         align-items: center;
+        font-size: 16px;
     }
     
     .MenuItem a{
@@ -45,7 +46,7 @@
     .MenuItem a:hover,
     .MenuItem a:active,
     .MenuItem a.active{
-        background-color: #8f5c2c;
+        background-color: #FFb156;
         border-bottom: 4px solid #40a4c8;
     }
 }

@@ -1,8 +1,19 @@
 const initialState = {
   loading: false,
-  errFireBase: null,
+  errDataBase: null,
   token: "",
-  userId: "",
+  userUpdated: false,
+  user: {
+    balance: 0,
+    _id: "",
+    firstName: "",
+    lastName: "",
+    regNumber: "",
+    email: "",
+    role: "",
+    isMailActivated: false,
+    isPhoneActivated: false,
+  },
 };
 
 const reducer = (state = initialState, action) => {
@@ -17,17 +28,15 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
+        user: action.user,
         token: action.token,
-        userId: action.userId,
       };
 
     case "LOGIN_USER_ERROR":
-
-      console.log(action.err);
       return {
         ...state,
         loading: false,
-        errFireBase: action.err.response.data.error,
+        errDataBase: action.err.response.data.error.message,
       };
 
     case "SIGN_UP_USER_START":
@@ -40,26 +49,49 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
+        user: action.user,
         token: action.token,
-        userId: action.userId,
       };
 
     case "SIGN_UP_USER_ERROR":
       return {
         ...state,
         loading: false,
-        errFireBase: action.err.response.data.error.message,
+        errDataBase: action.err.response.data.error.message,
       };
 
     case "LOGOUT":
       localStorage.removeItem("userId");
       localStorage.removeItem("token");
+      localStorage.removeItem("userRole");
       localStorage.removeItem("refreshToken");
       localStorage.removeItem("expireDate");
       return {
         ...state,
-        token: null,
-        userId: null
+        user: {},
+        token: "",
+        errDataBase: "",
+      };
+
+    case "UPDATE_USER_START":
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case "UPDATE_USER_SUCCESS":
+      return {
+        ...state,
+        ...state.user,
+        loading: false,
+        user: action.user,
+      };
+
+    case "UPDATE_USER_ERROR":
+      return {
+        ...state,
+        loading: false,
+        errDataBase: action.err,
       };
 
     default:

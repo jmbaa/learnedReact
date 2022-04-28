@@ -6,29 +6,37 @@ export const loginUser = (email, password) => {
 
     let data = {
       email,
-      password,
-      returnSecureToken: true,
+      password
     };
 
     axios
       .post(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBzcoVa086KV0PIJhEzUZTWIvx-6rxYJiM",
+        "http://localhost:8000/api/v1/users/login",
         data
       )
       .then((res) => {
-        const userId = res.data.localId;
-        const token = res.data.idToken;
-        const expiresIn = res.data.expiresIn;
-        const refreshToken = res.data.refreshToken;
+        const user = res.data.user;
+        const token =  res.data.token;
 
-        const expireDate = new Date(new Date().getTime() + expiresIn * 1000);
+        // const userId = res.data.user._id;
+        // const token = res.data.token;
+        // const userRole = res.data.user.role;
+        // const fName= res.data.user.firstName;
+        // localStorage.setItem("token", token);
+        // localStorage.setItem("userId", userId);
+        // localStorage.setItem("userRole", userRole);
 
-        localStorage.setItem("token", token);
-        localStorage.setItem("userId", userId);
-        localStorage.setItem("expireDate", expireDate);
-        localStorage.setItem("refreshToken", refreshToken);
-        dispatch(loginUserSuccess(userId, token));
-        dispatch(logOutAfterMillSec(expiresIn * 3000));
+        dispatch(loginUserSuccess(user, token));
+        // const expiresIn = res.data.expiresIn;
+        // const refreshToken = res.data.refreshToken;
+
+        // const expireDate = new Date(new Date().getTime() + expiresIn * 1000);
+
+        // localStorage.setItem("token", token);
+        // localStorage.setItem("userId", userId);
+        // localStorage.setItem("expireDate", expireDate);
+        // localStorage.setItem("refreshToken", refreshToken);
+        // dispatch(logOutAfterMillSec(expiresIn * 3000));
       })
       .catch((err) => {
         dispatch(loginUserError(err));
@@ -42,11 +50,11 @@ export const loginUserStart = () => {
   };
 };
 
-export const loginUserSuccess = (userId, token) => {
+export const loginUserSuccess = (user, token) => {
   return {
     type: "LOGIN_USER_SUCCESS",
-    userId,
-    token,
+    user,
+    token
   };
 };
 
